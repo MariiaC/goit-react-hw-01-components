@@ -1,0 +1,30 @@
+.transaction__history {
+  width: 100%;
+  max-width: 900px;
+  background-color: lightgray;
+  height: fit-content;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+.transaction__history th {
+  padding: 10px 0;
+  border: 1px solid tomato;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+/* 
+.transaction__history th:last-child {
+  border: none;
+} */
+
+.transaction__history td {
+  padding: 16px;
+  border: 1px solid tomato;
+
+  text-align-last: center;
+}
+
+.transaction__history tr:nth-child(even) {
+  background-color: lightsalmon;
+}
