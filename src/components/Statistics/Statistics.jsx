@@ -4,8 +4,8 @@ import s from './Statistics.module.css';
 const Statistics = ({ title, stats }) => {
   return (
     <section className={s.statistics}>
-      <h2 className={s.title}>{title}</h2>
-
+      {title && <h2 className={s.title}>{title}</h2>}
+      
       <ul className={s.stat__list}>
         {stats.map(el => (
           <li
@@ -24,7 +24,14 @@ const Statistics = ({ title, stats }) => {
 export default Statistics;
 
 Statistics.propTypes = {
- stats: PropTypes.array,
+  title:PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ),
 };
 
 function generateHEX() {
